@@ -1,0 +1,15 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../frame-compression.srcs/sources_1/ip/Residual_BRAM/sim/Residual_BRAM.v" \
+"../../../../frame-compression.srcs/sources_1/new/IBP.v" \
+"../../../../frame-compression.srcs/sources_1/new/Intra_mode.v" \
+"../../../../frame-compression.srcs/sources_1/new/TBT.v" \
+"../../../../frame-compression.srcs/sources_1/new/Top.v" \
+"../../../../frame-compression.srcs/sources_1/new/VLC.v" \
+"../../../../frame-compression.srcs/sim_1/new/Top_Test.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

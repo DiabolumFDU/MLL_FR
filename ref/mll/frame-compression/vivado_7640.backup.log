@@ -1,0 +1,61 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:43:45 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Tue Jun 26 17:23:56 2018
+# Process ID: 7640
+# Current directory: F:/file/研二下/专用集成电路系统专题讲座/project/Frame Compression/frame-compression
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1872 F:\file\研二下\专用集成电路系统专题讲座\project\Frame Compression\frame-compression\frame-compression.xpr
+# Log file: F:/file/研二下/专用集成电路系统专题讲座/project/Frame Compression/frame-compression/vivado.log
+# Journal file: F:/file/研二下/专用集成电路系统专题讲座/project/Frame Compression/frame-compression\vivado.jou
+#-----------------------------------------------------------
+start_gui
+eexit
+INFO: [Common 17-206] Exiting Vivado at Tue Jun 26 17:27:51 2018...
+ession/frame-compression/frame-compression.xpr}
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'F:/file/研二下/专用集成电路系统专题讲座/project/Frame Compression/frame-compression'
+INFO: [Project 1-313] Project file moved from 'C:/Users/shzhang/Desktop/frame-compression' since last save.
+Scanning sources...
+Finished scanning sources
+CRITICAL WARNING: [Project 1-192] Failed to load run synth_1. Strategy Vivado Synthesis Defaults (Vivado Synthesis 2016) not recognized by Vivado. 
+
+CRITICAL WARNING: [Project 1-192] Failed to load run Residual_BRAM_synth_1. Strategy Vivado Synthesis Defaults (Vivado Synthesis 2016) not recognized by Vivado. 
+
+CRITICAL WARNING: [Project 1-192] Failed to load run synth_2. Strategy Flow_RuntimeOptimized (Vivado Synthesis 2016) not recognized by Vivado. 
+
+CRITICAL WARNING: [Project 1-192] Failed to load run impl_1. Strategy Vivado Implementation Defaults (Vivado Implementation 2016) not recognized by Vivado. 
+
+CRITICAL WARNING: [Project 1-192] Failed to load run Residual_BRAM_impl_1. Strategy Vivado Implementation Defaults (Vivado Implementation 2016) not recognized by Vivado. 
+
+CRITICAL WARNING: [Project 1-192] Failed to load run impl_2. Strategy Performance_Retiming (Vivado Implementation 2016) not recognized by Vivado. 
+
+CRITICAL WARNING: [Project 1-532] XML ERROR: Project Option CompiledLibDirXSim has no valid value
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name WTXSimLaunchSim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name WTModelSimLaunchSim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name WTQuestaLaunchSim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name WTIesLaunchSim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name WTVcsLaunchSim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name WTRivieraLaunchSim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name WTActivehdlLaunchSim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name WTXSimExportSim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name WTModelSimExportSim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name WTQuestaExportSim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name WTIesExportSim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name WTVcsExportSim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name WTRivieraExportSim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name WTActivehdlExportSim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name GenerateIPUpgradeLog
+WARNING: [Project 1-231] Project 'frame-compression.xpr' was created with a future version and may or may not perform reliably with this version of Vivado. It has been opened in read-only mode for the protection of unrecognized data. Use 'File | Save Project As...' if you wish to alter a copy of the project.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2015.4/data/ip'.
+WARNING: [IP_Flow 19-2162] IP 'Residual_BRAM' is locked:
+* Project containing IP 'Residual_BRAM' is read-only.
+* IP definition 'Block Memory Generator (8.3)' for IP 'Residual_BRAM' has a different revision in the IP Catalog.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Jun 26 17:27:58 2018...
+): peak = 724.758 ; gain = 96.777
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Jun 26 17:27:42 2018...

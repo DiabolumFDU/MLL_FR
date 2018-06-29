@@ -1,0 +1,69 @@
+一、摘要：
+帧再压缩可以减少视频编码器的外部访存带宽，尤其是P/B帧的压缩。
+
+Mixed Lossy and Lossless (MLL) reference frame recompression
+
+带宽降低来自于：1）Pixel truncation；2）Embedded compression
+
+对于PR压缩，使用in-block prediction和small-value optimized variable length coding
+
+二、导论：
+当下主流减少外部访存带宽的方法：1）快速运动估计算法，但是包含随机性，不适合硬件实现。2）数据复用方法，多使用片上缓存。3）帧再压缩，减少参考帧的大小。在将关键帧存入外部内存的时候先进行压缩。
+
+
+三、帧再压缩
+现今的帧再压缩方案：
+1）ADPCM：通过将二维数据展开成一维数据，然后通过做差来保存差值，用差值来缩小数据，其中会对差值进行量化，有损
+2）IMR ADPCM：以不同的方式展开成一维数据
+3）Hierarchical Minimum and Difference：层次取最小，仅通过加法还原。
+4）Embedded Reconstruction Patterns：以四个像素为基础压缩
+
+
+四、MLL帧再压缩方案：
+1）TBT：Tail bit truncation
+原始像素先进行右移操作，产生PR和TR，TR为右移所压缩的信息，单独保存。而PR为剩下的部分，进行后续的压缩流程。
+
+2）IMR IBP：Intra Mode Referenced In-Block Prediction
+输入为8x8的像素矩阵，左上角为Initial Pixel（IP），左边和顶部的一排为Basic Pixel（BP），其余的为Normal Pixel（NP）。
+
+分为两个阶段P1，P2。P1对IP和BP进行DPCM，产生BP-residual，简单说就是预测当前像素和上个像素值一致。然后另外保存实际的差异值。
+P2就是根据IP和BP，对NP进行预测，内置8个预测模型，在压缩前需要根据编码的模式选择预测模型，然后计算得到实际的差异值。保存的时候只保存差异值。
+另外实现预测函数的时候使用移位操作代替除法，可以降低复杂度。
+
+3）SVO VLC：Small-Value Optimized Variable Length Coding
+针对小值优化的变长编码。从实际的例子（图6）可以发现，大部分的残差（实际值和预测值的差异）都非常小。由于在本文提出的MLL中还进行了TBT，即所有像素值都已经事先除以2，因此残差会更小。
+使用变长的编码表进行编码，然后把8x8的像素矩阵分成4个4x4的小矩阵，然后根据小矩阵的残差最大值选择对应的VLC变长编码。如果残差大于32，那么就会使用Exp-golomb进行编码。
+
+4）External Memory Organization
+三个内存区域，分别存储PR，TR，TLB数据。
+TR和TLB是定长的，因此可以简单通过基地址和index进行寻址。而PR是变长的，首先是字节对准的，然后使用TLB来记录每个8x8模块的起始地址和长度。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+Running: xsim.dir/VLC_Test_behav/xsimk.exe -simmode gui -wdb VLC_Test_behav.wdb -simrunnum 0 -socket 2036
+Design successfully loaded
+Design Loading Memory Usage: 6896 KB (Peak: 6896 KB)
+Design Loading CPU Usage: 31 ms
+Simulation completed
+Simulation Memory Usage: 7860 KB (Peak: 7860 KB)
+Simulation CPU Usage: 31 ms
